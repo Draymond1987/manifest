@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <remote  name="aosp"
+           fetch="https://android.googlesource.com/"
+           review="https://android-review.googlesource.com/" />
+  <default revision="refs/tags/android-10.0.0_r41"
+           remote="aosp"
+           sync-j="4" 
+           sync-c="true" />
+
+  <!--Device tree-->
+  <project name="Draymond1987/android_device_google_taimen" path="device/google/taimen" remote="github" revision="lineage-17.1"/>
+  <project name="Draymond1987/android_device_google_wahoo" path="device/google/wahoo" remote="github" revision="lineage-17.1"/>
+  
+
+  <!--Kernel-->
+  <project name="Draymond987/android_kernel_google_wahoo" path="kernel/google/wahoo" remote="github" revision="q10x"/>
+
+  <!--Vendor-->
+  <project name="Draymond1987/vendor_google" path="vendor/google" remote="github" revision="ten"/>
+ 
+  <!--Base-->
+  <remove-project path="frameworks/base" name="ResurrectionRemix/android_frameworks_base" remote="github" revision="oreo" />
+  <project path="frameworks/base" name="deed-taimen/android_frameworks_base" remote="github" revision="oreo" />
+  <remove-project path="packages/apps/Settings" name="ResurrectionRemix/Resurrection_packages_apps_Settings" remote="github" revision="oreo" />
+  <project path="packages/apps/Settings" name="deed-taimen/android_packages_apps_Settings" remote="github" revision="rr" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/build-tools" name="android_prebuilts_build-tools" remote="du" />  
+
+  <!--Packages-->
+   <project path="packages/apps/DU-Tweaks" name="android_packages_apps_DU-Tweaks" remote="du" />
+
+  <!-- Toolchains -->
+  <project path="prebuilts/clang/host/linux-x86" name="android_prebuilts_clang_host_linux-x86" remote="du" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="du" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="du" />
+
+
+  <!--Gapps-->  
+<remote name="opengapps" fetch="https://github.com/opengapps/"  />
+<remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/"  />
+
+<project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+
+<project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+
+<!-- arm64 depends on arm -->
+<project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+<project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+
+<project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+<project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+
+</manifest>
