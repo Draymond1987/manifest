@@ -17,6 +17,9 @@
            remote="github"
            sync-c="true"
            sync-j="4" />
+   
+   <remote name="gitlab"
+           fetch="https://gitlab.com/" />
 
 <!-- DU remote -->
   <remote  name="du"
@@ -43,17 +46,6 @@
 
 
 <!--Gapps-->
-<remote name="opengapps" fetch="https://github.com/opengapps/"/>
-<remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/"/>
+<project path="vendor/pixelgapps" name="ezio84/android_vendor_pixelgapps" remote="gitlab" revision="q" />
 
-<project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
-
-<project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-
-<!-- arm64 depends on arm -->
-<project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-<project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-
-<project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-<project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
 </manifest>
